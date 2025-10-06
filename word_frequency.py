@@ -35,3 +35,23 @@ while (is_sentence(user_sentence) == False):
     print("This does not meet the criteria for a sentence.")
     user_input = input("Enter a sentence: ")
     
+# Remove ending punctuation and split sentence into words
+words_in_sentence = re.findall(r'\b\w+\b', user_sentence.lower())
+
+# Create two lists for words and their frequencies
+words = []
+frequencies = []
+
+# Iterate through the words and update frequency
+for word in words_in_sentence:
+    if word in words:
+        index = words.index(word)
+        frequencies[index] += 1
+    else:
+        words.append(word)
+        frequencies.append(1)
+
+# Print the results
+print("\nWord frequencies:")
+for i in range(len(words)):
+    print(f"{words[i]}: {frequencies[i]}")
