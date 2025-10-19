@@ -55,3 +55,5 @@ for word in words_in_sentence:
 print("\nWord frequencies:")
 for i in range(len(words)):
     print(f"{words[i]}: {frequencies[i]}")
+
+# your code splits words with an ' into 2 words, like "don't" for example -0.5
